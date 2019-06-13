@@ -20,8 +20,7 @@
         </dl>
     </li>
     <li class="layui-nav-item layui-this"><a href="/">首页</a></li>
-    <li class="layui-nav-item"><a target="_blank" href="https://www.woann.cn">吴先生的博客</a></li>
-    <li class="layui-nav-item"><a target="_blank" href="https://github.com/woann">Github</a></li>
+    <li class="layui-nav-item"><a target="_blank" href="https://github.com/cuigeg/workman">Github项目地址</a></li>
 </ul>
 <script type="text/javascript" src="{{asset('/asset/layui/jquery.js')}}"></script>
 <script src="{{asset('/asset/layui/layui.js')}}"></script>
