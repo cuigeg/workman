@@ -139,7 +139,17 @@ x.find(".layim-list-friend  .layui-layim-list").on("contextmenu", "li",
         ...
     }
 ```
-
+## 页面展示
+1.好友聊天<br>
+![avatar](./public/markdown/01.png)
+2.群聊<br>
+![avatar](./public/markdown/02.png)
+3.查找好友
+![avatar](./public/markdown/03.png)
+4.查找群聊
+![avatar](./public/markdown/04.png)
+5.消息盒子
+![avatar](./public/markdown/05.png)
 ## 声明
 1. 前端部分是采用layui,在此郑重说明，layui中的im部分layim并不开源，仅供交流学习，请勿将此项目中的layim用作商业用途
 2. 此项目持续开发中，欢迎有兴趣的朋友共同维护

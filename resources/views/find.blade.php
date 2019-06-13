@@ -32,7 +32,7 @@
                                 <div style="float: left">
                                     <img style="width: 75px;height: 75px;object-fit: cover;" src="{{ $v->avatar }}" alt="">
                                 </div>
-                                <span style="float: left;margin-left: 10px;display: inline-block;width: 140px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{ $v->nickname }}({{ $v->id }})</span>
+                                <span style="float: left;margin-left: 10px;display: inline-block;width: 140px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">{{ $v->nickname }}</span>
                                 <button onclick="addFriend({{ $v->id }},'{{ $v->nickname }}','{{ $v->avatar }}')" style="float: right;margin-top: 40px;" class="layui-btn layui-btn-normal layui-btn-sm">
                                     <i class="layui-icon">&#xe654;</i> 添加
                                 </button>
