@@ -23,6 +23,8 @@ Layim框架文档：[https://www.layui.com/doc/modules/layim.html](https://www.l
 |查找-好友 | 可以根据用户名、昵称、id来查找，不输入内容不允许查找数据，点击发起好友申请，每页6人|
 |查找-群聊 | 可根据群昵称、群id查找群聊，点击加入，每页6人|
 |创建群聊 | 创建一个新群聊|
+|修改群聊名称 | 修改指定群聊名称|
+|解散群聊 | 解散指定群聊分组|
 |面板内快速查找 | 查找已加的好友（好友列）、群聊（群聊列）|
 |消息盒子 | 用来接受好友请求和同意或拒绝好友请求的系统消息|
 |个性签名 | 如果客服系统可显示客户访问商品ID和商品，如果聊天可以显示发表心情|
@@ -39,9 +41,67 @@ Layim框架文档：[https://www.layui.com/doc/modules/layim.html](https://www.l
 |新增好友分组|右击好友分组可新增好友分组|
 |重命名好友分组|右击好友分组可重命名改分组|
 
+## 安装
+1. 下载项目
+```
+git clone https://github.com/cuigeg/workman.git
+```
+2.项目根目录复制.env文件
+```
+cp .env.example .env
+```
+3.composer安装依赖
+```
+composer insatll
+```
+4.生成独立的Key
+```
+php artisan key:generate
+```
+5.配置数据<br>
+5.1 .env文件
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=im
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+DB_PREFIX=im_
+```
+5.2 /Applications/YourApp/Config/Db.php
+```
+<?php
+namespace Config;
+/**
+ * mysql配置
+ * @author walkor
+ */
+class Db
+{
+    /**
+     * 数据库配置
+     */
+    public static $homestead = array(
+        'host' => '192.168.10.10',
+        'port' => '3306',
+        'dbname' => 'im',
+        'user' => 'homestead',
+        'password' => 'secret',
+        'charset'  => 'utf8',
+    );
+}
+```
+6.项目根目录运行Gateway
+```
+php start.php start
+```
+7.访问laravel项目，查看是否运行正常
+
 ## 更改源码Layim
 1.好友列表右击事件（删除好友，聊天记录）<br>
 2.好友分组右击事件（重命名分组，删除分组，新增分组）
+3.群聊右击事件（创建群聊，修改群聊名称，删除群聊）
 ```
 //好友列表右击事件（好友分组雷同）
 x.find(".layim-list-friend  .layui-layim-list").on("contextmenu", "li",
@@ -79,9 +139,12 @@ x.find(".layim-list-friend  .layui-layim-list").on("contextmenu", "li",
         ...
     }
 ```
+
 ## 声明
 1. 前端部分是采用layui,在此郑重说明，layui中的im部分layim并不开源，仅供交流学习，请勿将此项目中的layim用作商业用途
 2. 此项目持续开发中，欢迎有兴趣的朋友共同维护
+3. 此项目属于个人项目，如果有兴趣的小伙伴可以一起贡献代码
+感觉还不错的小伙伴，请留下您的star
 
 
 
