@@ -9,6 +9,17 @@ GatewayWorker框架文档：[http://www.workerman.net/gatewaydoc/](http://www.wo
 laravel5.5框架文档：[https://laravelacademy.org/laravel-docs-5_5](https://laravelacademy.org/laravel-docs-5_5])<br>
 Layim框架文档：[https://www.layui.com/doc/modules/layim.html](https://www.layui.com/doc/modules/layim.html)
 
+演示地址：[www.zhang-mingming.cn]([www.zhang-mingming.cn])(有效时间2019-07-15)
+
+测试账号：<br>
+          账号：admin01 密码：123456<br>
+          账号：admin02 密码：123456<br>
+          账号：admin03 密码：123456<br>
+          账号：admin04 密码：123456<br>
+          账号：admin05 密码：123456<br>
+          账号：admin06 密码：123456<br>
+          账号：admin07 密码：123456<br>
+          账号：admin08 密码：123456
 ## 版本支持
 
 > PHP >=7.1<br>

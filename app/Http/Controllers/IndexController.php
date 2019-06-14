@@ -137,6 +137,10 @@ class IndexController extends Controller
         return getValidate(210,70,$key);
     }
 
+    /**
+     * 刷新图片验证码
+     * @return IndexController
+     */
     public function refreshImg()
     {
         $code_hash = uniqid().uniqid();
