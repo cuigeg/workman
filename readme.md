@@ -46,20 +46,22 @@ Layim框架文档：[https://www.layui.com/doc/modules/layim.html](https://www.l
 ```
 git clone https://github.com/cuigeg/workman.git
 ```
-2.项目根目录复制.env文件
+2.运行sql文件<br>
+项目根目录im.sql文件为本项目所需数据库字段与数据<br>
+3.项目根目录复制.env文件
 ```
 cp .env.example .env
 ```
-3.composer安装依赖
+4.composer安装依赖
 ```
 composer insatll
 ```
-4.生成独立的Key
+5.生成独立的Key
 ```
 php artisan key:generate
 ```
-5.配置数据<br>
-5.1 .env文件
+6.配置数据库<br>
+6.1 .env文件
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -69,7 +71,7 @@ DB_USERNAME=homestead
 DB_PASSWORD=secret
 DB_PREFIX=im_
 ```
-5.2 /Applications/YourApp/Config/Db.php
+6.2 /Applications/YourApp/Config/Db.php
 ```
 <?php
 namespace Config;
@@ -92,11 +94,15 @@ class Db
     );
 }
 ```
-6.项目根目录运行Gateway
+7.项目根目录运行Gateway(-d 守护进程开启服务)
 ```
-php start.php start
+php start.php start -d
 ```
-7.访问laravel项目，查看是否运行正常
+8.更改前端webscoket访问地址（/resources/views/index.blade.php）78行
+```
+    socket = new WebSocket('ws://192.168.10.10:8282');
+```
+9.访问laravel项目，查看是否运行正常
 
 ## 更改源码Layim
 1.好友列表右击事件（删除好友，聊天记录）<br>

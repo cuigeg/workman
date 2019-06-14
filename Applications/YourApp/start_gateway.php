@@ -24,10 +24,13 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $gateway = new Gateway("websocket://0.0.0.0:8282");
 // gateway名称，status方便查看
 $gateway->name = 'YourAppGateway';
-// gateway进程数
-$gateway->count = 4;
+// gateway进程数（设置不合理会报错）
+//业务代码偏向IO密集型 进程数为cpu内核的3倍
+//业务代码偏向CPU密集型 进程数为cpu内核个数
+//不确定属于那种   内核的2倍
+$gateway->count = 1;
 // 本机ip，分布式部署时使用内网ip
-$gateway->lanIp = '192.168.10.10';
+$gateway->lanIp = '127.0.0.1';
 // 内部通讯起始端口，假如$gateway->count=4，起始端口为4000
 // 则一般会使用4000 4001 4002 4003 4个端口作为内部通讯端口 
 $gateway->startPort = 2900;
