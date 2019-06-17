@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Storage;
 use Cache;
 use DB;
@@ -41,6 +42,21 @@ class IndexController extends Controller
     {
         if ($request->isMethod('post')) {
             $post = $request->all();
+            $validator = Validator::make($post, [
+                'username' => 'required|unique:user,username|max:100',
+                'password' => 'required|between:6,20',
+                'nickname' => 'required|string|max:255'
+            ],[
+                'username.required'=>'请填写用户名',
+                'username.unique'=>'用户名已存在，请更换',
+                'username.max'=>'用户名超长，请不要输入太长',
+                'password.required'=>'请填写密码',
+                'password.between'=>'请输入6-20位密码',
+                'nickname.required'=>'请填写昵称',
+            ]);
+            if ($validator->fails()) {
+                return $this->responed_data(500, $validator->errors()->first());
+            }
             $code_value = \Illuminate\Support\Facades\Cache::get('image:'.$post['key']);
             if ($code_value != $post['code']) {
                 return $this->responed_data(500,'验证码错误');
@@ -50,11 +66,11 @@ class IndexController extends Controller
                 return $this->responed_data(500,'用户名已存在');
             }
             $data = [
-                'avatar' => $post['avatar'],
+                'avatar' => $post['avatar'] ?? 'uploads/avatar/avatar.jpg',
                 'nickname' => $post['nickname'],
                 'username' => $post['username'],
                 'password' => password_hash($post['password'], PASSWORD_DEFAULT),
-                'sign' => $post['sign'],
+                'sign' => $post['sign'] ? $post['sign'] : '这个人很懒，什么都没有填写' ,
             ];
             $user_id = DB::table('user')->insertGetId($data);
             if (!$user_id) {
