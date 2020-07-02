@@ -9,7 +9,7 @@ GatewayWorker框架文档：[http://www.workerman.net/gatewaydoc/](http://www.wo
 laravel5.5框架文档：[https://laravelacademy.org/laravel-docs-5_5](https://laravelacademy.org/laravel-docs-5_5])<br>
 Layim框架文档：[https://www.layui.com/doc/modules/layim.html](https://www.layui.com/doc/modules/layim.html)
 
-演示地址：[http://love.1314zyh.cn/]([http://love.1314zyh.cn/])(有效时间2019-07-15)
+演示地址：[love.1314zyh.cn]([http://love.1314zyh.cn])(有效时间2019-07-15)
 
 测试账号：<br>
           账号：admin01 密码：123456<br>
